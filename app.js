@@ -66,7 +66,11 @@
 
   /* ---- data loading and validation ----------------------------------- */
 
-  fetch(DATA_URL)
+  // "no-cache" revalidates with the server instead of trusting the cached copy,
+  // so an edited glossary.json shows up immediately rather than after the
+  // ten-minute GitHub Pages cache expires. Unchanged files still come back as a
+  // cheap 304, so this costs nothing in the common case.
+  fetch(DATA_URL, { cache: "no-cache" })
     .then(function (res) {
       if (!res.ok) throw new Error("HTTP " + res.status + " fetching " + DATA_URL);
       return res.json();
