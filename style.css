@@ -70,12 +70,14 @@ body {
   font-size: 0.95rem;
 }
 
-.subtitle a {
+.subtitle a,
+.page-footer a {
   color: var(--term-link);
   text-decoration: underline;
 }
 
-.subtitle a:hover { text-decoration-thickness: 2px; }
+.subtitle a:hover,
+.page-footer a:hover { text-decoration-thickness: 2px; }
 
 .instruction {
   margin: 0;
