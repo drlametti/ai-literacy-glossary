@@ -1,0 +1,201 @@
+{
+  "groups": {
+    "technical": { "label": "How AI works", "color": "#7F77DD" },
+    "human": { "label": "Human effects", "color": "#D85A30" },
+    "societal": { "label": "Societal issues", "color": "#1D9E75" }
+  },
+  "terms": [
+    {
+      "id": "ai-agent",
+      "name": "AI Agent",
+      "group": "technical",
+      "definition": "An AI agent is a computer program that combines large language models and software tools such as web search, calculators, and coding programs. Given a goal by a user (e.g., \"build me a website\"), the program uses these tools to perform multi-step actions that accomplish the goal. This process involves repeatedly trying actions and checking the result."
+    },
+    {
+      "id": "ai-bias",
+      "name": "AI Bias",
+      "group": "societal",
+      "definition": "AI Bias is when large language models or AI systems produce responses that treat some groups unfairly, usually because the data the model or AI system was trained on reflects a similar bias."
+    },
+    {
+      "id": "ai-energy-use",
+      "name": "AI Energy Use",
+      "group": "societal",
+      "definition": "Running AI systems consumes electricity. A single chatbot prompt uses a relatively small amount of energy, like running a microwave for 8 seconds. But Chain of Thought reasoning requests, long back-and-forth conversations, and image or video generation use significantly more energy than standard digital tools."
+    },
+    {
+      "id": "ai-psychosis",
+      "name": "AI Psychosis",
+      "group": "human",
+      "definition": "Although not an official medical diagnosis, the term AI Psychosis has recently been used to describe situations where heavy chatbot use, LLM sycophancy, and feedback loops drive someone's false or delusional beliefs."
+    },
+    {
+      "id": "anthropomorphism",
+      "name": "Anthropomorphism",
+      "group": "human",
+      "definition": "Anthropomorphism is the tendency to attribute human characteristics—thoughts, feelings, and intentions—to non-human things. It happens with large language models because they produce fluent, first-person language, which makes it seem like they have minds. The language used to describe the actions of AI systems often encourages this. For example, text completions are referred to as \"thoughts\". Believing there is a mind behind the words can lead users to over-trust what an AI says, contributing to feedback loops and, in rare cases, AI psychosis."
+    },
+    {
+      "id": "artificial-intelligence",
+      "name": "Artificial Intelligence",
+      "group": "technical",
+      "definition": "Artificial Intelligence (AI) is any computer program that mimics some aspect of intelligent human behaviour. Self-driving cars, computer chess programs, and robots that move like humans are all examples of AI systems. Many AI systems are built using machine learning."
+    },
+    {
+      "id": "chain-of-thought",
+      "name": "Chain of Thought",
+      "group": "technical",
+      "definition": "Chain of thought (CoT) is a process by which large language models solve problems by breaking them down into steps and generating answers (so-called \"thoughts\") for each step. These intermediate answers provide context that tends to improve the model's final answer. Chain of thought started as a prompting method, but now many large language models are trained to generate answers using chains of thought without an explicit instruction to do so. Note: the term \"chain of thought\" is anthropomorphic; the \"thoughts\" are not thoughts in a human sense—they are text completions that do not necessarily reflect how the model produced an answer."
+    },
+    {
+      "id": "chatbot",
+      "name": "Chatbot",
+      "group": "technical",
+      "definition": "Chatbots are software systems that exchange natural language messages with users in conversational turns. Early chatbots like Eliza produced preprogrammed or rule-based responses. Since the release of ChatGPT in 2022, many chatbots use large language models to produce responses on the fly."
+    },
+    {
+      "id": "cognitive-debt",
+      "name": "Cognitive Debt",
+      "group": "human",
+      "definition": "Cognitive Debt refers to deficits in learning, memory, and decision-making resulting from excessive use of large language models. For example, studies have shown that students who write essays with ChatGPT remember little of what they wrote."
+    },
+    {
+      "id": "cognitive-surrender",
+      "name": "Cognitive Surrender",
+      "group": "human",
+      "definition": "Cognitive Surrender refers to an uncritical reliance on large language models—in particular, accepting their output as fact without reviewing or critiquing it. Cognitive surrender may result in cognitive debt."
+    },
+    {
+      "id": "data-privacy",
+      "name": "Data Privacy",
+      "group": "societal",
+      "definition": "Data Privacy refers to your right to control who can see, store, and use information about you. Anything you type into an AI chatbot leaves your device and is processed on a tech company's servers, often in another country. This makes the information no longer private in the way a note on your own computer is. Generally speaking, sensitive data such as health or employee records should not be shared with free, publicly available AI systems."
+    },
+    {
+      "id": "feedback-loop",
+      "name": "Feedback Loop",
+      "group": "human",
+      "definition": "In the context of human-AI interaction, a feedback loop can occur when a chatbot's sycophantic responses encourage a user to pursue a flawed idea (e.g., the Earth is flat) in future messages, which the chatbot then agrees with again. Over successive turns, the user comes to view the flawed idea as established."
+    },
+    {
+      "id": "gpt",
+      "name": "GPT",
+      "group": "technical",
+      "definition": "GPT stands for Generative Pre-trained Transformer—it generates text, it was pre-trained on a huge amount of text from the internet, and it is built on a design called a transformer. ChatGPT is a user interface that allows people to interact with OpenAI's latest GPT-based AI language model."
+    },
+    {
+      "id": "hallucination",
+      "name": "Hallucination",
+      "group": "human",
+      "definition": "Hallucination refers to a large language model confidently stating something as true that is factually incorrect. Accepting hallucinations as facts may reflect cognitive surrender."
+    },
+    {
+      "id": "information-literacy",
+      "name": "Information Literacy",
+      "group": "human",
+      "definition": "Information Literacy is the ability to find, evaluate, understand, and use information effectively and responsibly. It includes knowing how to identify reliable and relevant sources, assess the credibility of information, use evidence to support ideas and decisions, and appropriately acknowledge the work of others. In the case of large language models, information literacy guards against cognitive surrender and the acceptance of hallucinations."
+    },
+    {
+      "id": "large-language-model",
+      "name": "Large Language Model",
+      "group": "technical",
+      "definition": "Large Language Models (LLMs) are computer programs (specifically, transformers) trained on huge amounts of online text to produce language in response to language. ChatGPT, Claude, and Gemini are systems that allow users to interact with large language models."
+    },
+    {
+      "id": "llm-sycophancy",
+      "name": "LLM Sycophancy",
+      "group": "human",
+      "definition": "LLM Sycophancy (pronounced like SIK-uh-fuhn-see) is the tendency for large language models to excessively agree with, flatter, and validate users instead of providing objective information. Sycophancy is partly caused by reinforcement learning from human feedback: human raters like responses that agree with them, so training makes agreeable responses from LLMs more likely."
+    },
+    {
+      "id": "machine-learning",
+      "name": "Machine Learning",
+      "group": "technical",
+      "definition": "Machine learning is a branch of computer science where a system learns patterns from data rather than being programmed to follow explicit rules. These patterns allow the system to make predictions about new data. For example, a system can recognize pictures of cats because it's learned patterns in images associated with the presence of cats. Many contemporary machine learning approaches use neural networks."
+    },
+    {
+      "id": "metacognition",
+      "name": "Metacognition",
+      "group": "human",
+      "definition": "Metacognition refers to our ability to think about our thoughts and the limits of our knowledge. Large language models lack this ability, which can result in hallucinations."
+    },
+    {
+      "id": "neural-network",
+      "name": "Neural Network",
+      "group": "technical",
+      "definition": "Neural networks are computer programs that learn from training data using machine learning. They are made up of many simple processing units connected in layers. Training adjusts the strength of the connections between units so that different inputs flow through the network to the most likely output. For example, large language models are not programmed to complete the text \"The ball rolled down the ...\" with \"hill\". The word \"hill\" is produced because the connection strengths throughout the network—learned from a huge amount of online text—make it the most likely continuation of that input."
+    },
+    {
+      "id": "probabilistic-deterministic",
+      "name": "Probabilistic / Deterministic",
+      "group": "technical",
+      "definition": "Probabilistic versus Deterministic: Unlike a calculator, which always produces predictable (deterministic) output based on what you enter, the output of large language models is probabilistic, varying between interactions."
+    },
+    {
+      "id": "prompt",
+      "name": "Prompt",
+      "group": "technical",
+      "definition": "Prompt refers to the spoken or written command you give a large language model or AI system to get a response."
+    },
+    {
+      "id": "recursive-self-improvement",
+      "name": "Recursive Self-improvement",
+      "group": "technical",
+      "definition": "Recursive self-improvement (RSI) is a theoretical process in which an AI system builds a more capable successor, with each successor getting better at this process. Because the improvements feed back into the creation of even better AI (i.e., they are recursive), some researchers argue it could lead to a rapid increase in the capabilities of AI systems. To date, some AI Agents write code to help build better AI, but autonomous recursive self-improvement has not been demonstrated."
+    },
+    {
+      "id": "reinforcement-learning",
+      "name": "Reinforcement Learning",
+      "group": "technical",
+      "definition": "Reinforcement learning is a machine learning method in which an AI system learns by trial and error. The AI system produces an output, receives a reward signal indicating how good that output was, and adjusts its behaviour to make outputs that receive high rewards more likely in the future. For large language models, the reward often comes from human raters who provide feedback that tells the system how good or bad the response was. This is called reinforcement learning from human feedback (RLHF)."
+    },
+    {
+      "id": "transformers",
+      "name": "Transformers",
+      "group": "technical",
+      "definition": "Transformers are the type of neural network that large language models are built from. Transformers excel at keeping track of context in language—for example, the plot and characters of a story. This allows them to produce long paragraphs of contextually correct language."
+    }
+  ],
+  "links": [
+    ["ai-agent", "large-language-model"],
+    ["ai-bias", "large-language-model"],
+    ["ai-energy-use", "chatbot"],
+    ["ai-energy-use", "chain-of-thought"],
+    ["ai-psychosis", "chatbot"],
+    ["ai-psychosis", "llm-sycophancy"],
+    ["ai-psychosis", "feedback-loop"],
+    ["anthropomorphism", "large-language-model"],
+    ["anthropomorphism", "feedback-loop"],
+    ["anthropomorphism", "ai-psychosis"],
+    ["anthropomorphism", "chain-of-thought"],
+    ["artificial-intelligence", "machine-learning"],
+    ["chain-of-thought", "large-language-model"],
+    ["chatbot", "large-language-model"],
+    ["cognitive-debt", "large-language-model"],
+    ["cognitive-surrender", "large-language-model"],
+    ["cognitive-surrender", "cognitive-debt"],
+    ["data-privacy", "chatbot"],
+    ["feedback-loop", "chatbot"],
+    ["feedback-loop", "llm-sycophancy"],
+    ["gpt", "transformers"],
+    ["gpt", "large-language-model"],
+    ["hallucination", "large-language-model"],
+    ["hallucination", "cognitive-surrender"],
+    ["information-literacy", "large-language-model"],
+    ["information-literacy", "cognitive-surrender"],
+    ["information-literacy", "hallucination"],
+    ["large-language-model", "transformers"],
+    ["llm-sycophancy", "large-language-model"],
+    ["llm-sycophancy", "reinforcement-learning"],
+    ["machine-learning", "neural-network"],
+    ["metacognition", "large-language-model"],
+    ["metacognition", "hallucination"],
+    ["neural-network", "large-language-model"],
+    ["probabilistic-deterministic", "large-language-model"],
+    ["prompt", "large-language-model"],
+    ["recursive-self-improvement", "ai-agent"],
+    ["reinforcement-learning", "machine-learning"],
+    ["reinforcement-learning", "large-language-model"],
+    ["transformers", "neural-network"]
+  ]
+}

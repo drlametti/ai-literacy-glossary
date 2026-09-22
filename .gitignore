@@ -1,0 +1,6 @@
+# Source material, not part of the published site
+*.pdf
+
+# Local editor/tooling config
+.claude/
+.DS_Store
