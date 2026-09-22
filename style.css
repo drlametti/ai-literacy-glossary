@@ -70,6 +70,13 @@ body {
   font-size: 0.95rem;
 }
 
+.subtitle a {
+  color: var(--term-link);
+  text-decoration: underline;
+}
+
+.subtitle a:hover { text-decoration-thickness: 2px; }
+
 .instruction {
   margin: 0;
   color: var(--fg-muted);
