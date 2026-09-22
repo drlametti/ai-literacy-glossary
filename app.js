@@ -364,10 +364,11 @@
 
     simulation = d3.forceSimulation(nodes)
       .force("link", d3.forceLink(links).id(function (d) { return d.id; })
-        .distance(90).strength(0.5))
-      .force("charge", d3.forceManyBody().strength(-420).distanceMax(520))
+        .distance(105).strength(0.45))
+      .force("charge", d3.forceManyBody().strength(-520).distanceMax(560))
       .force("center", d3.forceCenter(width / 2, height / 2).strength(0.08))
-      .force("collide", d3.forceCollide().radius(function (d) { return d.r + 16; }))
+      // Extra vertical-ish room so the always-visible labels collide less.
+      .force("collide", d3.forceCollide().radius(function (d) { return d.r + 22; }))
       .force("x", d3.forceX(width / 2).strength(0.03))
       .force("y", d3.forceY(height / 2).strength(0.05))
       .on("tick", tick);
