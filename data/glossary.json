@@ -9,7 +9,7 @@
       "id": "ai-agent",
       "name": "AI Agent",
       "group": "technical",
-      "definition": "An AI agent is a computer program that combines large language models and software tools such as web search, calculators, and coding programs. Given a goal by a user (e.g., \"build me a website\"), the program uses these tools to perform multi-step actions that accomplish the goal. This process involves repeatedly trying actions and checking the result."
+      "definition": "An AI agent is a computer program that combines large language models, chain of thought reasoning, and software tools such as web search, calculators, and coding programs. Given a goal by a user (e.g., \"build me a website\"), the program uses these tools to perform multi-step actions that accomplish the goal. This process involves repeatedly trying actions and checking the result."
     },
     {
       "id": "ai-bias",
@@ -157,6 +157,7 @@
     }
   ],
   "links": [
+    ["ai-agent", "chain-of-thought"],
     ["ai-agent", "large-language-model"],
     ["ai-bias", "large-language-model"],
     ["ai-energy-use", "chatbot"],

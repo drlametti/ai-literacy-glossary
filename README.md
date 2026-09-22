@@ -144,4 +144,10 @@ Without the `gh` CLI, create the repository on GitHub, push to `main`, then go t
 To publish later changes, commit and push to `main`; Pages redeploys automatically, usually
 within a minute.
 
+One caveat when updating the glossary: GitHub Pages serves these files with
+`Cache-Control: max-age=600`, so a browser that has already visited the site may keep showing
+the old content for up to ten minutes. A hard refresh (<kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>R</kbd>,
+or <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>R</kbd> on Windows) fetches the new version
+immediately. Worth knowing before concluding that an edit did not take.
+
 Live site: <https://drlametti.github.io/ai-literacy-glossary/>
