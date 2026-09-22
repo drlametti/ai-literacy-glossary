@@ -688,6 +688,10 @@
     svg.transition().duration(400).call(zoom.transform, d3.zoomIdentity);
     elSearch.value = "";
     runSearch("");
+    // Reset means the whole map again: drop the selection and any fading
+    // along with the zoom, so every node is back at full strength.
+    hoverId = null;
+    clearSelection();
     simulation.alpha(0.3).restart();
   });
 

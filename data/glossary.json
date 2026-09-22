@@ -39,7 +39,7 @@
       "id": "artificial-intelligence",
       "name": "Artificial Intelligence",
       "group": "technical",
-      "definition": "Artificial Intelligence (AI) is any computer program that mimics some aspect of intelligent human behaviour. Self-driving cars, computer chess programs, and robots that move like humans are all examples of AI systems. Many AI systems are built using machine learning."
+      "definition": "Artificial Intelligence (AI) is any computer program that mimics some aspect of intelligent human behaviour. Self-driving cars, computer chess programs, and large language models like GPT are all examples of AI systems. Many AI systems are built using machine learning."
     },
     {
       "id": "chain-of-thought",
@@ -140,7 +140,7 @@
     {
       "id": "recursive-self-improvement",
       "name": "Recursive Self-improvement",
-      "group": "technical",
+      "group": "societal",
       "definition": "Recursive self-improvement (RSI) is a theoretical process in which an AI system builds a more capable successor, with each successor getting better at this process. Because the improvements feed back into the creation of even better AI (i.e., they are recursive), some researchers argue it could lead to a rapid increase in the capabilities of AI systems. To date, some AI Agents write code to help build better AI, but autonomous recursive self-improvement has not been demonstrated."
     },
     {
@@ -168,6 +168,7 @@
     ["anthropomorphism", "feedback-loop"],
     ["anthropomorphism", "ai-psychosis"],
     ["anthropomorphism", "chain-of-thought"],
+    ["artificial-intelligence", "large-language-model"],
     ["artificial-intelligence", "machine-learning"],
     ["chain-of-thought", "large-language-model"],
     ["chatbot", "large-language-model"],
