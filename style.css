@@ -243,8 +243,13 @@ button:hover { border-color: var(--fg-muted); }
   stroke-width: 3px;
   paint-order: stroke;
   stroke-linejoin: round;
-  pointer-events: none;
   user-select: none;
+  /* The label is part of the node's hit area: clicking a term's name should
+     select it, not fall through to the background and clear the selection.
+     "all" covers the gaps between glyphs too, so the whole label responds
+     rather than only the painted strokes. */
+  pointer-events: all;
+  cursor: pointer;
 }
 
 .node, .link { transition: opacity 0.15s ease; }

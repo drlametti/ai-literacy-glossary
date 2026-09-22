@@ -25,10 +25,13 @@
   var elAllTerms = document.getElementById("all-terms-list");
 
   // State
-  var groups = {};
+  // These maps are keyed by data-supplied ids, so they are created without a
+  // prototype: otherwise an id like "constructor" or "__proto__" would appear
+  // to exist and be mistaken for a real term.
+  var groups = Object.create(null);
   var terms = [];
-  var byId = {};
-  var neighbours = {};      // id -> array of ids
+  var byId = Object.create(null);
+  var neighbours = Object.create(null);   // id -> array of ids
   var nodes = [];
   var links = [];
   var selectedId = null;
@@ -37,7 +40,7 @@
   var searchMatches = [];
   var activeResult = -1;
   var linkPattern = null;   // RegExp for in-definition term links
-  var aliasToId = {};
+  var aliasToId = Object.create(null);
   var svg, gRoot, linkSel, nodeSel, simulation, zoom;
   var width = 0, height = 0;
   var panMoved = false;
@@ -70,28 +73,49 @@
   // so an edited glossary.json shows up immediately rather than after the
   // ten-minute GitHub Pages cache expires. Unchanged files still come back as a
   // cheap 304, so this costs nothing in the common case.
+  var dataArrived = false;
   fetch(DATA_URL, { cache: "no-cache" })
     .then(function (res) {
       if (!res.ok) throw new Error("HTTP " + res.status + " fetching " + DATA_URL);
       return res.json();
     })
-    .then(init)
+    .then(function (data) {
+      dataArrived = true;
+      init(data);
+    })
     .catch(function (err) {
       console.error("Could not load glossary data:", err);
-      elStatus.textContent =
-        "Could not load " + DATA_URL + ". If you opened this file directly, " +
-        "run a local server instead (see README).";
+      // Blaming file:// for what is actually a data problem sends you looking
+      // in the wrong place, so say which of the two happened.
+      elStatus.textContent = dataArrived
+        ? "The glossary loaded but could not be displayed. Check " + DATA_URL +
+          " — details are in the browser console."
+        : "Could not load " + DATA_URL + ". If you opened this file directly, " +
+          "run a local server instead (see README).";
     });
 
   function init(data) {
-    groups = data.groups || {};
+    Object.keys(data.groups || {}).forEach(function (key) {
+      groups[key] = data.groups[key];
+    });
     terms = (data.terms || []).slice();
-    terms.forEach(function (t) { byId[t.id] = t; });
+    terms.forEach(function (t) {
+      if (byId[t.id]) {
+        console.warn('Glossary data: duplicate term id "' + t.id +
+                     '". Only the last one will be reachable by link or #hash.');
+      }
+      byId[t.id] = t;
+    });
 
     // Validate: links pointing at unknown ids are dropped with a warning.
     var rawLinks = data.links || [];
     var pairs = [];
     rawLinks.forEach(function (pair) {
+      if (!Array.isArray(pair) || pair.length < 2) {
+        console.warn("Glossary data: link entry " + JSON.stringify(pair) +
+                     " is not a pair of term ids. Entry ignored.");
+        return;
+      }
       var a = pair[0], b = pair[1];
       var missing = [];
       if (!byId[a]) missing.push(a);
@@ -211,7 +235,7 @@
       if (!id && /s$/.test(key)) id = aliasToId[key.slice(0, -1)];
       // Don't link a term to itself, and don't link unknown matches.
       if (!id || id === term.id) return match;
-      return '<button type="button" class="term-link" data-id="' + id +
+      return '<button type="button" class="term-link" data-id="' + escapeHtml(id) +
              '" title="Show definition of ' + escapeHtml(byId[id].name) + '">' +
              match + "</button>";
     });
@@ -284,7 +308,10 @@
       .scaleExtent([0.3, 4])
       .on("start", function () { panMoved = false; })
       .on("zoom", function (event) {
-        panMoved = true;
+        // Only a drag should suppress the click that ends it. A wheel zoom
+        // emits no move event, so it must not swallow the next click.
+        var src = event.sourceEvent;
+        if (src && /move/.test(src.type)) panMoved = true;
         gRoot.attr("transform", event.transform);
       });
 
@@ -454,7 +481,7 @@
   }
 
   function highlightNeighbourhood(id) {
-    var keep = {};
+    var keep = Object.create(null);
     keep[id] = true;
     (neighbours[id] || []).forEach(function (n) { keep[n] = true; });
 
@@ -472,7 +499,7 @@
   }
 
   function highlightMatches() {
-    var keep = {};
+    var keep = Object.create(null);
     searchMatches.forEach(function (t) { keep[t.id] = true; });
 
     nodeSel
