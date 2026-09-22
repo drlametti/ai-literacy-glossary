@@ -163,6 +163,23 @@
     buildLinkPattern();
     renderLegend();
     renderAllTerms();
+
+    // Some institutional networks block public CDNs. If D3 did not load there
+    // is no map, but the full glossary is still on the page — say so plainly
+    // and open the list, instead of blaming the data file.
+    if (typeof d3 === "undefined") {
+      console.error("D3 did not load, so the interactive map is unavailable. " +
+                    "The alphabetical term list is unaffected.");
+      elStatus.textContent =
+        "The interactive map could not load, because the D3 graphics library was " +
+        "blocked or unavailable on this network. All " + terms.length +
+        " terms and definitions are listed below.";
+      elGraph.hidden = true;   // an empty bordered box just looks broken
+      var details = document.getElementById("all-terms-details");
+      if (details) details.open = true;
+      return;
+    }
+
     buildGraph();
 
     elStatus.textContent =
