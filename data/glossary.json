@@ -33,7 +33,7 @@
       "id": "anthropomorphism",
       "name": "Anthropomorphism",
       "group": "human",
-      "definition": "Anthropomorphism is the tendency to attribute human characteristics—thoughts, feelings, and intentions—to non-human things. It happens with large language models because they produce fluent, first-person language, which makes it seem like they have minds. The language used to describe the actions of AI systems often encourages this. For example, text completions are referred to as \"thoughts\". Believing there is a mind behind the words can lead users to over-trust what an AI says, contributing to feedback loops and, in rare cases, AI psychosis."
+      "definition": "Anthropomorphism is the tendency to attribute human characteristics—thoughts, feelings, and intentions—to non-human things. It can happen with large language models because they produce fluent, first-person language, which makes it seem like they have minds. And the language we use to describe AI systems often encourages this. For example, we call text completions \"thoughts\". Believing there is a mind behind the machine can cause users to rely on what an AI says, contributing to feedback loops and, in rare cases, AI psychosis."
     },
     {
       "id": "artificial-intelligence",
