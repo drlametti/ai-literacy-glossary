@@ -41,9 +41,27 @@ to stop the server.
 
 ## Editing the glossary
 
-All content lives in [`data/glossary.json`](data/glossary.json). Nothing about the terms,
-definitions, groups, or links is hard-coded in `app.js`, so editing that one file updates the
-map. Reload the page to see changes.
+Edit [`glossary.md`](glossary.md). It holds every term, definition, group, and connection in
+plain Markdown, and its own header explains the format. When you are done, run:
+
+```bash
+python3 tools/glossary.py to-json
+```
+
+That regenerates [`data/glossary.json`](data/glossary.json), which is what the site actually
+loads. Commit both files and push.
+
+The converter refuses to write anything if it finds a problem — a group that is not in the
+Groups table, a connection pointing at an id that does not exist, a duplicate id, a term with
+no definition — and names each one, so a slip in the Markdown cannot reach the live site. To
+check without writing, use `python3 tools/glossary.py check`.
+
+`data/glossary.json` is generated. Editing it by hand works, but the next conversion will
+overwrite your changes, so prefer the Markdown. If the JSON ever gets ahead, rebuild the
+Markdown from it with `python3 tools/glossary.py to-markdown`.
+
+The rest of this section describes the JSON directly, which is still worth knowing since it is
+what the browser reads.
 
 The file has three top-level keys: `groups`, `terms`, and `links`.
 
